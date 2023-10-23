@@ -1,0 +1,130 @@
+* {
+box-sizing: border-box;
+
+}
+
+body{
+
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.opacity{
+  opacity: .1;
+}
+
+.board-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.title{
+  font-family: cursive;
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+  text-transform: capitalize;
+  animation: title 4s;
+  animation-iteration-count: infinite;
+
+
+}
+
+
+
+.board{
+  display: grid;
+  grid-template-columns: repeat(3,80px);
+
+  gap: 5px;
+
+}
+
+.square {
+  width:  80px;
+  height: 80px;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  transition: .3s;
+  box-shadow: 0px 0px 4px #d2d2df;
+
+
+}
+
+.square:hover{
+  background-color: #3e3e41;
+  scale: 1.07;
+  
+}
+
+.square-text{
+
+  text-align: center;
+
+
+}
+
+.turn{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  gap: 1em;
+  pointer-events: none;
+
+}
+
+.bg-class{
+  background-color: rgb(12, 12, 12);
+}
+
+
+
+.container{
+  width: 200px;
+  height: 180px;
+  position: absolute;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+  
+  background-color:  rgb(45, 105, 234);
+  color: whitesmoke;
+  text-shadow: 2px 2px  1px black;
+  padding: 1em;
+  inset: 0;
+  margin: auto;
+
+  text-align: center;
+  
+
+}
+
+.play-again-btn{
+  padding: 10px ;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  border: 0;
+  transition: .3s;
+ 
+}
+
+.play-again-btn:hover, .play-again-btn:focus{
+
+  background-color: #1f26e5;
+  color: whitesmoke;
+  scale: 1.1;
+
+
+}
