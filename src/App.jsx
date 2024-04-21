@@ -3,6 +3,8 @@ import { useState } from "react";
 import "./App.css";
 import confetti from "canvas-confetti";
 import sound from "./assets/click.wav";
+import { Square } from "./components/Square";
+import { GameIsOver } from "./components/GameIsOver";
 
 const TURNS = {
   X: "\u274C",
@@ -24,58 +26,7 @@ const winnerArray = [
 function clickSound() {
   new Audio(sound).play();
 }
-export const Square = ({
-  children,
-  index,
-  isSelected,
-  updateBoard,
-  isFilled,
-  turn,
-}) => {
-  const [hover, setHover] = useState("");
-  const myClass = isSelected ? "square bg-class" : "square";
-  let squareTextClass = isFilled ? "square-text" : "square-text opacity";
 
-  function addHover() {
-    return !isFilled ? setHover(turn) : "";
-  }
-
-  return (
-    <div
-      onMouseEnter={addHover}
-      onMouseLeave={() => setHover("")}
-      onClick={() => updateBoard(index)}
-      className={myClass}
-      key={index}
-    >
-      <p className={squareTextClass}>{children ? children : hover}</p>
-    </div>
-  );
-};
-
-export const GameIsOver = ({ winner, boardIsFull, resetGame }) => {
-  return (
-    <div>
-      {
-        // CHECK IF THERE IS A WINNER OR THE BOARD IS FULL ,
-        // IF THERE IS NO WINNER BUT ITS FULL ,RENDER 'IS A TIE'
-
-        winner || boardIsFull ? (
-          <header className="container">
-            <h2 className="winner-text">
-              {winner ? `The winner is ${winner}` : "Is a Tie"}{" "}
-            </h2>
-            <button onClick={() => resetGame()} className="play-again-btn">
-              Play Again
-            </button>
-          </header>
-        ) : (
-          ""
-        )
-      }
-    </div>
-  );
-};
 export const App = () => {
   // MY STATES
 
